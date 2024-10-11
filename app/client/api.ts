@@ -223,6 +223,7 @@ export function getHeaders(ignoreHeaders: boolean = false) {
   if (!ignoreHeaders) {
     headers = {
       "Content-Type": "application/json",
+      "X-Title": "AIChat",
       Accept: "application/json",
     };
   }
