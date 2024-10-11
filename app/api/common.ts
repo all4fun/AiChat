@@ -98,6 +98,10 @@ export async function requestOpenai(req: NextRequest) {
       ...(serverConfig.openaiOrgId && {
         "OpenAI-Organization": serverConfig.openaiOrgId,
       }),
+      // for openrouter activity logs
+      ...(fetchUrl.startsWith("https://openrouter.ai") && {
+        "X-Title": "AIChat",
+      }),
     },
     method: req.method,
     body: req.body,

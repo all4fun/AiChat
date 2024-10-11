@@ -9,7 +9,7 @@
   },
   "package": {
     "productName": "AIChat",
-    "version": "2.15.4"
+    "version": "5.0.0"
   },
   "tauri": {
     "allowlist": {
