@@ -98,10 +98,6 @@ export async function requestOpenai(req: NextRequest) {
       ...(serverConfig.openaiOrgId && {
         "OpenAI-Organization": serverConfig.openaiOrgId,
       }),
-      // for openrouter activity logs
-      ...(fetchUrl.startsWith("https://openrouter.ai") && {
-        "X-Title": "AIChat",
-      }),
     },
     method: req.method,
     body: req.body,
@@ -179,6 +175,11 @@ export async function requestOpenai(req: NextRequest) {
     // Because Vercel uses gzip to compress the response, if we don't remove the content-encoding header
     // The browser will try to decode the response with brotli and fail
     newHeaders.delete("content-encoding");
+
+    // for openrouter activity logs
+    if (fetchUrl.startsWith("https://openrouter.ai")) {
+      newHeaders.set("X-Title", "AIChat");
+    }
 
     return new Response(res.body, {
       status: res.status,
