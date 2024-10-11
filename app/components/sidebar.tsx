@@ -4,7 +4,6 @@ import styles from "./home.module.scss";
 
 import { IconButton } from "./button";
 import SettingsIcon from "../icons/settings.svg";
-import GithubIcon from "../icons/github.svg";
 import ChatGptIcon from "../icons/chatgpt.svg";
 import AddIcon from "../icons/add.svg";
 import DeleteIcon from "../icons/delete.svg";
@@ -23,7 +22,6 @@ import {
   NARROW_SIDEBAR_WIDTH,
   Path,
   PLUGINS,
-  REPO_URL,
 } from "../constant";
 
 import { Link, useNavigate } from "react-router-dom";
@@ -224,8 +222,8 @@ export function SideBar(props: { className?: string }) {
       {...props}
     >
       <SideBarHeader
-        title="NextChat"
-        subTitle="Build your own AI assistant."
+        title="AIChat"
+        subTitle="私人AI智能助手."
         logo={<ChatGptIcon />}
       >
         <div className={styles["sidebar-header-bar"]}>
@@ -298,7 +296,7 @@ export function SideBar(props: { className?: string }) {
                 />
               </Link>
             </div>
-            <div className={styles["sidebar-action"]}>
+            {/* <div className={styles["sidebar-action"]}>
               <a href={REPO_URL} target="_blank" rel="noopener noreferrer">
                 <IconButton
                   aria={Locale.Export.MessageFromChatGPT}
@@ -306,7 +304,7 @@ export function SideBar(props: { className?: string }) {
                   shadow
                 />
               </a>
-            </div>
+            </div> */}
           </>
         }
         secondaryAction={
