@@ -82,7 +82,7 @@
         "signingIdentity": null
       },
       "resources": [],
-      "shortDescription": "NextChat App",
+      "shortDescription": "AIChat App",
       "targets": "all",
       "windows": {
         "certificateThumbprint": null,
@@ -97,20 +97,22 @@
     "updater": {
       "active": true,
       "endpoints": [
-        "https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web/releases/latest/download/latest.json"
+        "https://github.com/all4fun/ChatGPT-Next-Web/releases/latest/download/latest.json"
       ],
       "dialog": true,
       "windows": {
         "installMode": "passive"
       },
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IERFNDE4MENFM0Y1RTZBOTQKUldTVWFsNC96b0JCM3RqM2NmMnlFTmxIaStRaEJrTHNOU2VqRVlIV1hwVURoWUdVdEc1eDcxVEYK"
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDFBOEQyOUNDM0I3MDlEQjMKUldTem5YQTd6Q21OR2c3dS9rWG9pUjUyOEoyeGpVd0RmSHQ0N3QxeTE0VWVKSEEzcjJmWHdlWmoK"
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDFBOEQyOUNDM0I3MDlEQjMKUldTem5YQTd6Q21OR2c3dS9rWG9pUjUyOEoyeGpVd0RmSHQ0N3QxeTE0VWVKSEEzcjJmWHdlWmoK"
     },
     "windows": [
       {
         "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "title": "NextChat",
+        "title": "AIChat",
+        "title": "AIChat",
         "width": 960,
         "hiddenTitle": true,
         "titleBarStyle": "Overlay"
