@@ -23,6 +23,7 @@ import {
   Path,
   PLUGINS,
   REPO_URL,
+  PLUGINS,
 } from "../constant";
 
 import { Link, useNavigate } from "react-router-dom";
