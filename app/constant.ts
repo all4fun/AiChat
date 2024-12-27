@@ -29,6 +29,8 @@ export const TENCENT_BASE_URL = "https://hunyuan.tencentcloudapi.com";
 export const MOONSHOT_BASE_URL = "https://api.moonshot.cn";
 export const IFLYTEK_BASE_URL = "https://spark-api-open.xf-yun.com";
 
+export const DEEPSEEK_BASE_URL = "https://api.deepseek.com";
+
 export const XAI_BASE_URL = "https://api.x.ai";
 
 export const CHATGLM_BASE_URL = "https://open.bigmodel.cn";
@@ -66,6 +68,7 @@ export enum ApiPath {
   Artifacts = "/api/artifacts",
   XAI = "/api/xai",
   ChatGLM = "/api/chatglm",
+  DeepSeek = "/api/deepseek",
 }
 
 export enum SlotID {
@@ -120,6 +123,7 @@ export enum ServiceProvider {
   Iflytek = "Iflytek",
   XAI = "XAI",
   ChatGLM = "ChatGLM",
+  DeepSeek = "DeepSeek",
 }
 
 // Google API safety settings, see https://ai.google.dev/gemini-api/docs/safety-settings
@@ -144,6 +148,7 @@ export enum ModelProvider {
   Iflytek = "Iflytek",
   XAI = "XAI",
   ChatGLM = "ChatGLM",
+  DeepSeek = "DeepSeek",
 }
 
 export const Stability = {
@@ -224,6 +229,11 @@ export const Moonshot = {
 export const Iflytek = {
   ExampleEndpoint: IFLYTEK_BASE_URL,
   ChatPath: "v1/chat/completions",
+};
+
+export const DeepSeek = {
+  ExampleEndpoint: DEEPSEEK_BASE_URL,
+  ChatPath: "chat/completions",
 };
 
 export const XAI = {
@@ -421,6 +431,8 @@ const iflytekModels = [
   "4.0Ultra",
 ];
 
+const deepseekModels = ["deepseek-chat", "deepseek-coder"];
+
 const xAIModes = ["grok-beta"];
 
 const chatglmModels = [
@@ -566,6 +578,17 @@ export const DEFAULT_MODELS = [
       providerName: "ChatGLM",
       providerType: "chatglm",
       sorted: 12,
+    },
+  })),
+  ...deepseekModels.map((name) => ({
+    name,
+    available: true,
+    sorted: seq++,
+    provider: {
+      id: "deepseek",
+      providerName: "DeepSeek",
+      providerType: "deepseek",
+      sorted: 13,
     },
   })),
 ] as const;
