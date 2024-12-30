@@ -899,7 +899,7 @@ export function ShortcutKeyModal(props: { onClose: () => void }) {
     },
     {
       title: Locale.Chat.ShortcutKey.clearContext,
-      keys: isMac ? ["⌘", "Shift", "Delete"] : ["Ctrl", "Shift", "Delete"],
+      keys: isMac ? ["⌘", "Shift", "k"] : ["Ctrl", "Shift", "k"],
     },
   ];
   return (
@@ -1608,7 +1608,7 @@ function _Chat() {
       else if (
         (event.metaKey || event.ctrlKey) &&
         event.shiftKey &&
-        event.key.toLowerCase() === "delete"
+        event.key.toLowerCase() === "k"
       ) {
         event.preventDefault();
         chatStore.updateCurrentSession((session) => {
