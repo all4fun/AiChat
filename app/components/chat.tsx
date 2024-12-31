@@ -899,9 +899,7 @@ export function ShortcutKeyModal(props: { onClose: () => void }) {
     },
     {
       title: Locale.Chat.ShortcutKey.clearContext,
-      keys: isMac
-        ? ["⌘", "Shift", "Backspace"]
-        : ["Ctrl", "Shift", "Backspace"],
+      keys: isMac ? ["⌘", "Shift", "k"] : ["Ctrl", "Shift", "k"],
     },
   ];
   return (
@@ -1606,11 +1604,11 @@ function _Chat() {
         event.preventDefault();
         setShowShortcutKeyModal(true);
       }
-      // 清除上下文 command + shift + Backspace
+      // 清除上下文 command + shift + k
       else if (
         (event.metaKey || event.ctrlKey) &&
         event.shiftKey &&
-        event.key.toLowerCase() === "backspace"
+        event.key.toLowerCase() === "k"
       ) {
         event.preventDefault();
         chatStore.updateCurrentSession((session) => {
