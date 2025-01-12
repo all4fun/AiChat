@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSideConfig } from "../config/server";
-import { OPENAI_BASE_URL, ServiceProvider } from "../constant";
+import { APP, REPO_URL, OPENAI_BASE_URL, ServiceProvider } from "../constant";
 import { cloudflareAIGatewayUrl } from "../utils/cloudflare";
 import { getModelProvider, isModelNotavailableInServer } from "../utils/model";
 
@@ -98,6 +98,10 @@ export async function requestOpenai(req: NextRequest) {
       ...(serverConfig.openaiOrgId && {
         "OpenAI-Organization": serverConfig.openaiOrgId,
       }),
+      ...(fetchUrl.startsWith("https://openrouter.ai") && {
+        "HTTP-Referer": `${REPO_URL}`, // Optional, for including your app on openrouter.ai rankings.
+        "X-Title": `${APP}`, // Optional. Shows in rankings on openrouter.ai.
+      }),
     },
     method: req.method,
     body: req.body,
@@ -142,6 +146,7 @@ export async function requestOpenai(req: NextRequest) {
       console.error("[OpenAI] gpt4 filter", e);
     }
   }
+  console.log("[fetch headers]", fetchOptions.headers);
 
   try {
     const res = await fetch(fetchUrl, fetchOptions);
