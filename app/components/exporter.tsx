@@ -525,7 +525,7 @@ export function ImagePreviewer(props: {
           </div>
 
           <div>
-            <div className={styles["main-title"]}>AIChat</div>
+            <div className={styles["main-title"]}>AiChat</div>
             <div className={styles["sub-title"]}>您的私人AI智能助手</div>
             <div className={styles["icons"]}>
               <MaskAvatar avatar={config.avatar} />

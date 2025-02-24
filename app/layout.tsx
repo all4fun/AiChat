@@ -9,10 +9,10 @@ import { getServerSideConfig } from "./config/server";
 const serverConfig = getServerSideConfig();
 
 export const metadata: Metadata = {
-  title: "AIChat",
+  title: "AiChat",
   description: "Your personal ChatGPT Chat Bot.",
   appleWebApp: {
-    title: "AIChat",
+    title: "AiChat",
     statusBarStyle: "default",
   },
 };

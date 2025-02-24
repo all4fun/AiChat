@@ -1,4 +1,4 @@
-export const APP = "AIChat";
+export const APP = "AiChat";
 export const OWNER = "all4fun";
 export const REPO = "ChatGPT-Next-Web";
 export const REPO_URL = `https://github.com/${OWNER}/${REPO}`;
